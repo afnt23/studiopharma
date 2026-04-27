@@ -38,18 +38,21 @@ const team = [
     role: "Pilates Reformer & California Barre",
     bio: "Ex nuotatrice agonista, ha trasformato la sua esperienza atletica in un approccio unico all'insegnamento. Ha portato il California Barre a Sanremo ed è laureanda in Scienze Motorie.",
     cert: "Certificata Pilates Reformer · California Barre · Nuoto",
+    img: "/Pictures/Alessia.jpg",
   },
   {
     name: "Alice Farina",
     role: "Pilates Matwork & Reformer · Yoga",
     bio: "Laureata in Scienze Motorie (LM-67) con due anni di studi osteopatici. Il suo approccio: ogni esercizio ha una fondazione scientifica — massima efficacia, zero rischi.",
     cert: "Certificata Pilates Matwork & Reformer · Yoga · Osteopatia",
+    img: "/Pictures/Alice.jpg",
   },
   {
     name: "Marta Jureczko",
     role: "Pilates Reformer & California Barre",
     bio: "Danzatrice professionista diplomata alla Scuola Statale di Danza Classica di Poznań. Solista in Europa, al Festival di Sanremo e su navi da crociera in Asia e Medio Oriente.",
     cert: "Certificata Pilates Reformer · California Barre · Danza Classica",
+    img: "/Pictures/Marta.jpg",
   },
 ];
 
@@ -215,34 +218,28 @@ export default function Home() {
       </section>
 
       {/* ── TEAM ── */}
-      <section id="team">
-        {/* Wide section header with reformer room photo */}
-        <div className="relative h-52 md:h-72 overflow-hidden">
-          <Image
-            src="/Pictures/dsc03284-enhanced-nr-1098536469.jpg"
-            alt="Sala Pilates Reformer Studio Pharma"
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-[#1A1714]/65" />
-          <div className="absolute inset-0 flex items-end px-6 pb-10 md:px-14 lg:px-24">
-            <div>
-              <p className="text-[#C9A96E] tracking-[0.32em] uppercase text-[11px] mb-3">Chi siamo</p>
-              <h2 className="serif text-white text-[clamp(2rem,4vw,3rem)] font-light">Il Nostro Team</h2>
-            </div>
+      <section id="team" className="py-24 lg:py-36 px-6 bg-[#F8F4EF]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <p className="text-[#B8A898] tracking-[0.32em] uppercase text-[11px] mb-4">Chi siamo</p>
+            <h2 className="serif text-[clamp(2rem,4vw,3rem)] font-light">Il Nostro Team</h2>
           </div>
-        </div>
-
-        {/* Team cards — text-only, clean typography */}
-        <div className="bg-[#F8F4EF] py-16 px-6">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 md:divide-x divide-[#E8DDD5]">
-            {team.map((t, i) => (
-              <div key={t.name} className={`py-8 ${i > 0 ? "md:pl-10 lg:pl-14" : ""} ${i < team.length - 1 ? "md:pr-10 lg:pr-14" : ""} border-b md:border-b-0 border-[#E8DDD5] last:border-b-0`}>
-                <div className="w-8 h-px bg-[#C9A96E] mb-6" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {team.map((t) => (
+              <div key={t.name} className="group">
+                <div className="relative w-full aspect-[4/5] overflow-hidden mb-6">
+                  <Image
+                    src={t.img}
+                    alt={t.name}
+                    fill
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="w-8 h-px bg-[#C9A96E] mb-4" />
                 <h3 className="serif text-2xl font-light mb-1">{t.name}</h3>
-                <p className="text-[#C9A96E] text-[10px] tracking-[0.26em] uppercase mb-4">{t.role}</p>
-                <p className="text-[#5C5046] text-[13px] leading-relaxed mb-5">{t.bio}</p>
+                <p className="text-[#C9A96E] text-[10px] tracking-[0.26em] uppercase mb-3">{t.role}</p>
+                <p className="text-[#5C5046] text-[13px] leading-relaxed mb-4">{t.bio}</p>
                 <p className="text-[#B8A898] text-[10px] leading-relaxed">{t.cert}</p>
               </div>
             ))}
