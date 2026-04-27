@@ -46,10 +46,10 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className={`text-[11px] tracking-[0.22em] uppercase transition-colors duration-200 ${
+              className={`text-sm tracking-[0.18em] uppercase transition-colors duration-200 font-medium ${
                 scrolled
-                  ? "text-[#5C5046] hover:text-[#1A1714]"
-                  : "text-white/70 hover:text-white"
+                  ? "text-[#6B5D54] hover:text-[#1A1714]"
+                  : "text-white/75 hover:text-white"
               }`}
             >
               {l.label}
@@ -59,10 +59,10 @@ export default function Navbar() {
             href="https://app.shaggyowl.com/accesso-cliente/index.html"
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-[11px] tracking-[0.22em] uppercase px-5 py-2.5 border transition-all duration-300 ${
+            className={`text-sm tracking-[0.18em] uppercase px-6 py-2.5 border transition-all duration-300 font-medium ${
               scrolled
-                ? "border-[#1A1714] text-[#1A1714] hover:bg-[#1A1714] hover:text-[#F8F4EF]"
-                : "border-white/60 text-white hover:bg-white hover:text-[#1A1714]"
+                ? "border-[#1A1714] text-[#1A1714] hover:bg-[#1A1714] hover:text-[#F7F3EE]"
+                : "border-white/65 text-white hover:bg-white hover:text-[#1A1714]"
             }`}
           >
             Prenota
@@ -105,7 +105,7 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-[11px] tracking-[0.22em] uppercase text-[#5C5046] hover:text-[#1A1714] transition-colors"
+              className="text-sm tracking-[0.18em] uppercase text-[#6B5D54] hover:text-[#1A1714] transition-colors font-medium"
             >
               {l.label}
             </a>
@@ -114,7 +114,7 @@ export default function Navbar() {
             href="https://app.shaggyowl.com/accesso-cliente/index.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] tracking-[0.22em] uppercase border border-[#1A1714] px-5 py-3 text-center hover:bg-[#1A1714] hover:text-[#F8F4EF] transition-all duration-300"
+            className="text-sm tracking-[0.18em] uppercase border border-[#1A1714] px-6 py-3 text-center hover:bg-[#1A1714] hover:text-[#F7F3EE] transition-all duration-300 font-medium"
           >
             Prenota ora
           </a>

@@ -5,9 +5,11 @@ html {
 }
 
 body {
-  background-color: #F8F4EF;
+  background-color: #F7F3EE;
   color: #1A1714;
   font-family: var(--font-dm), ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .serif {
